@@ -58,7 +58,7 @@ Console.Write("Zadejte diferenci (celé číslo): ");
     Console.WriteLine("Výpis číselné řady");
 
     int current = first;
-    while () {
+    while (current <= last) {
         Console.WriteLine(current);
         current = current + step; // přičtení diference k aktuální vypisované hodnotě
     }

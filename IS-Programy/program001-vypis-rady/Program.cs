@@ -40,6 +40,18 @@ Console.Write("Zadejte diferenci (celé číslo): ");
         Console.WriteLine("Nezadali jste celé číslo. Zadejte diferenci znovu: ");
     }
 
+
+    //Výstup zadaných hodnot
+    Console.WriteLine();
+    Console.WriteLine("===================================================");
+    Console.WriteLine("Zadali jste tyto hodnoty: ");
+    Console.WriteLine("První číslo řady: {0}", first);
+    Console.WriteLine("Posledni číslo řady: {0}", last);
+    Console.WriteLine("Diference: {0}", step); 
+    Console.WriteLine("===================================================");
+    Console.WriteLine("První číslo: {0}; Poslední číslo: {1}; Diference: {2}", first, last, step);
+    Console.WriteLine("===================================================");
+
     Console.WriteLine();
     Console.WriteLine("Pro opakování programu stiskněte klávesu a");
     again = Console.ReadLine();

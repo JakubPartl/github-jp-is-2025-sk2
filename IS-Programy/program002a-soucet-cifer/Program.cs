@@ -20,6 +20,7 @@ while (again == "a")
     }
 
     int suma = 0;
+    int soucin = 1;
     int numberBackup = number;
     int digit;
 
@@ -29,25 +30,28 @@ while (again == "a")
         number = -number;
     }
 
-    while (number >= 10) {
-        digit = number % 10; //určí se nám zbytek
-        number = (number - digit) / 10;
-        Console.WriteLine("Hodnota zbytku = {0}", digit);
-        suma = suma + digit;
+
+    if (number == 0)
+    {
+        suma = 0;
+        soucin = 0;
     }
+    else
+    {
+        while (number > 0)
+        {
+            digit = number % 10; //určí se nám zbytek
+            number = number / 10;
+            Console.WriteLine("Hodnota zbytku = {0}", digit);
+            suma = suma + digit;
+            soucin = soucin * digit;
+        }
+    }
+        Console.WriteLine();
+        Console.WriteLine("Součet cifer čísla {0} je {1}", numberBackup, suma);
+        Console.WriteLine("Součin cifer čísla {0} je {1}", numberBackup, soucin);
 
-
-    // musíme poslední cifru vypsat
-    Console.WriteLine("Poslední zbytek = {0}", number);
-
-    // musíme poslední cifru přičíst
-    suma = suma + number;
-
-    Console.WriteLine();
-    Console.WriteLine("Součet cifer čísla {0} je {1}", numberBackup, suma);
-
-    Console.WriteLine();
-    Console.WriteLine("Pro opakování programu stiskněte klávesu a");
-    again = Console.ReadLine();
-
-}
+        Console.WriteLine();
+        Console.WriteLine("Pro opakování programu stiskněte klávesu a");
+        again = (Console.ReadLine() ?? "").ToLower();
+    }

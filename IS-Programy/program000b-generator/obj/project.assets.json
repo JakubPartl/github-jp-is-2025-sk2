@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\aaa\\IS-2025-Sk2\\github-jp-is-2025-sk2\\IS-Programy\\program000-generator\\program000-generator.csproj",
+      "projectUniqueName": "C:\\aaa\\IS-2025-Sk2\\github-jp-is-2025-sk2\\IS-Programy\\program000b-generator\\program000-generator.csproj",
       "projectName": "program000-generator",
-      "projectPath": "C:\\aaa\\IS-2025-Sk2\\github-jp-is-2025-sk2\\IS-Programy\\program000-generator\\program000-generator.csproj",
+      "projectPath": "C:\\aaa\\IS-2025-Sk2\\github-jp-is-2025-sk2\\IS-Programy\\program000b-generator\\program000-generator.csproj",
       "packagesPath": "C:\\Users\\partl\\.nuget\\packages\\",
-      "outputPath": "C:\\aaa\\IS-2025-Sk2\\github-jp-is-2025-sk2\\IS-Programy\\program000-generator\\obj\\",
+      "outputPath": "C:\\aaa\\IS-2025-Sk2\\github-jp-is-2025-sk2\\IS-Programy\\program000b-generator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\partl\\AppData\\Roaming\\NuGet\\NuGet.Config"

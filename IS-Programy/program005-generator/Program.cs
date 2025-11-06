@@ -46,14 +46,53 @@ while (again == "a")
     // příprava pro využití třídy Random
     Random myRandNum = new Random();
 
+//kladná, záporná, nebo nuly
+    int negativeNumbs = 0;
+    int positiveNumbs = 0;
+    int zeros = 0;
+
+    //sudá nebo lichá
+    int evenNumbs = 0;
+    int oddNumbs = 0;
+
     Console.WriteLine();
     Console.WriteLine("Náhodná čísla: ");
     for (int i = 0; i < n; i++)
     {
         myRandNumbs[i] = myRandNum.Next(lowerBound, upperBound);
         Console.Write("{0}; ", myRandNumbs[i]);
+        /* zbytečně dlouhý způsob
+        if (myRandNumbs[i] > 0)
+            positiveNumbs++;
+        if (myRandNumbs[i] < 0)
+            negativeNumbs++;
+        if (myRandNumbs[i] == 0)
+            zeros++;
+        */
+        if (myRandNumbs[i] > 0)
+            positiveNumbs++;
+        else if (myRandNumbs[i] < 0)
+            negativeNumbs++;
+        else zeros++; //nejmíň možné číslo, takže necháme na konci
+
+        if (myRandNumbs[i] % 2 == 0) 
+        evenNumbs++;
+        else oddNumbs++;
 
     }
+
+    Console.WriteLine();
+    Console.WriteLine("********************************************");
+    Console.WriteLine("********************************************");
+    Console.WriteLine("Počet kladných: {0}", positiveNumbs);
+    Console.WriteLine("Počet záporných: {0}", negativeNumbs);
+    Console.WriteLine("Počet nul: {0}", zeros);
+    Console.WriteLine("********************************************");
+    Console.WriteLine("********************************************");
+    Console.WriteLine("Počet sudých: {0}", evenNumbs);
+    Console.WriteLine("Počet lichých: {0}", oddNumbs);
+    Console.WriteLine("********************************************");
+    Console.WriteLine("********************************************");
 
     Console.WriteLine();
     Console.WriteLine("Pro opakování programu stiskněte klávesu a");

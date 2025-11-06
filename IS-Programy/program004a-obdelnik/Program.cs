@@ -16,14 +16,14 @@ while (again == "a")
     int width;
     while (!int.TryParse(Console.ReadLine(), out width))
     {
-        Console.Write("Nezadali jste celé číslo. Zadejte šířku obdelníku znovu: ");
+        Console.Write("Nezadali jste celé číslo. Zadejte výšku obdelníku znovu: ");
     }
 
     Console.Write("Zadejte šířku obdelníku: ");
     int height;
     while (!int.TryParse(Console.ReadLine(), out height))
     {
-        Console.Write("Nezadali jste celé číslo. Zadejte výšku obdelníku znovu: ");
+        Console.Write("Nezadali jste celé číslo. Zadejte šířku obdelníku znovu: ");
     }
 
     for (int i = 1; i <= height; i++)

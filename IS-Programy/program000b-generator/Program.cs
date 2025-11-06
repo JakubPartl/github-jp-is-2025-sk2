@@ -52,7 +52,6 @@ while (again == "a")
     {
         myRandNumbs[i] = myRandNum.Next(lowerBound, upperBound);
         Console.Write("{0}; ", myRandNumbs[i]);
-
     }
 
     Console.WriteLine();

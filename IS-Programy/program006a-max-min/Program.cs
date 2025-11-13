@@ -12,7 +12,7 @@ while (again == "a")
     Console.WriteLine("********************************************");
     Console.WriteLine();
 
-   Console.Write("Zadejte počet generovanách čísel (celé čísla): ");
+    Console.Write("Zadejte počet generovanách čísel (celé čísla): ");
     int n;
     while (!int.TryParse(Console.ReadLine(), out n))
     {
@@ -53,6 +53,41 @@ while (again == "a")
         myRandNumbs[i] = myRandNum.Next(lowerBound, upperBound);
         Console.Write("{0}; ", myRandNumbs[i]);
     }
+
+
+    // Hledání maxima, pozice maxima, minima, pozice minima
+    int max = myRandNumbs[0];
+    int min = myRandNumbs[0];
+    int posMax = 0;
+    int posMin = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (myRandNumbs[i] > max)
+        {
+            max = myRandNumbs[i];
+            posMax = i;
+        }
+
+        if (myRandNumbs[i] < min)
+        {
+            min = myRandNumbs[i];
+            posMin = i;
+        }
+    }
+
+    Console.WriteLine();
+    Console.WriteLine("********************************************");
+    Console.WriteLine($"Maximum: {max}");
+    Console.WriteLine($"Pozice maxima: {posMax}");
+    Console.WriteLine($"Minimum: {min}");
+    Console.WriteLine($"Pozice minima: {posMin}");
+    Console.WriteLine("********************************************");
+    Console.WriteLine();
+
+
+
+    //Vykreslení přesípacích hodin
 
     Console.WriteLine();
     Console.WriteLine("Pro opakování programu stiskněte klávesu a");

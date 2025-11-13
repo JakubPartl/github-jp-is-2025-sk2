@@ -87,7 +87,64 @@ while (again == "a")
 
 
 
+
     //Vykreslení přesípacích hodin
+    if (max >= 3)
+    {
+
+        Console.WriteLine();
+        Console.WriteLine("********************************************");
+        Console.WriteLine();
+        Console.WriteLine($"Přesípací hodiny o velikosti {max}");
+        Console.WriteLine();
+
+        //tento cyklus se stará o to, aby se vykreslil správný počet řádků
+        for (int i = 0; i < max; i++)
+        {
+            int spaces, stars;
+
+            if (i < max / 2)
+            {
+                //horní polovina - počet mezer v i-tém řádku
+                spaces = i;
+
+                //horní polovina - s každým dalším řádkem ubývají 2 hvězdičky (po jedné z každé strany)
+                stars = max - 2 * i;
+                //10 - 2*0 = 10
+                //10 - 2*1 = 8
+                //10 - 2*2 = 6
+            }
+            else
+            {
+                //dolní polovina - počet mezer v i-tém řádku
+                spaces = max - i - 1;
+                if (max % 2 == 1)
+                {
+                    stars = 2 * (i - (max / 2)) + 1; //vnitřní závorka není nutná, ale nevadí(když jsi nejsem jistý s přednostmi, radši ať tam je)
+                }
+                else
+                {
+                    stars = 2 * (i - max / 2) + 2;
+                }
+            }
+
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            // vykreslení správného počtu mezer pro každý řádek
+            // sp = spaces
+            for (int sp = 0; sp < spaces; sp++)
+                Console.Write(" ");
+
+            //vykreslení správného počtu hvězdiček pro každý řádek
+            // st = stars
+            for (int st = 0; st < stars; st++)
+                Console.Write(" ");
+        }
+    }
+    else
+    {
+        Console.WriteLine("Maximum je menší než 3 => obrazece se nebude vykreslovat!!! ");
+    }
+
 
     Console.WriteLine();
     Console.WriteLine("Pro opakování programu stiskněte klávesu a");

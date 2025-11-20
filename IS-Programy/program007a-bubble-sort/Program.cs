@@ -1,4 +1,6 @@
-﻿string again = "a";
+﻿using System.Diagnostics;
+
+string again = "a";
 while (again == "a")
 {
     Console.Clear();
@@ -7,7 +9,7 @@ while (again == "a")
     Console.WriteLine("********************************************");
     Console.WriteLine("********************************************");
     Console.WriteLine("************* Jakub Partl ******************");
-    Console.WriteLine("************** 16.10.2025 ******************");
+    Console.WriteLine("************** 20.11.2025 ******************");
     Console.WriteLine("********************************************");
     Console.WriteLine("********************************************");
     Console.WriteLine();
@@ -53,6 +55,44 @@ while (again == "a")
         myRandNumbs[i] = myRandNum.Next(lowerBound, upperBound);
         Console.Write("{0}; ", myRandNumbs[i]);
     }
+
+Stopwatch myStopwatch = new Stopwatch();
+
+int compare = 0; // počet porovnávání
+int change = 0;  // počet výměn
+
+myStopwatch.Start();
+for(int i=0; i < n -1 ; i++) {
+    // tento cyklus musí zajistit porovnávání dvou sousedních hodnot
+    // musí dále zajistit, aby se zmenšoval počet porovnávaných hodnot
+    for(int j =0; j < n - i - 1; j++) {
+        compare++;
+        if(myRandNumbs[j] > myRandNumbs[j+1]) {
+            int tmp = myRandNumbs[j+1]; 
+            myRandNumbs[j+1] = myRandNumbs[j];
+            myRandNumbs[j] = tmp; 
+            change++;
+        }
+    //compare++ jde umístit i sem
+    }        
+}
+myStopwatch.Stop();
+
+Console.WriteLine();
+Console.WriteLine("********************************************");
+Console.WriteLine("Seřazené pole: ");
+Console.WriteLine();
+for(int i = 0; i < n; i++) {
+        Console.Write("{0}; ", myRandNumbs[i]);
+    }
+
+Console.WriteLine();
+Console.WriteLine();
+Console.WriteLine();
+Console.WriteLine($"Počet porovnání: {compare}");
+Console.WriteLine($"Počet výměn: {change}");
+Console.WriteLine();
+Console.WriteLine("Čas seřazení čísel pomocí BS: {0}", myStopwatch.Elapsed);
 
     Console.WriteLine();
     Console.WriteLine("Pro opakování programu stiskněte klávesu a");

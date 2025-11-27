@@ -54,6 +54,20 @@ while (again == "a")
         Console.Write("{0}; ", myRandNumbs[i]);
     }
 
+for(int i =0; i< n/2 ;i++) {
+       int tmp = myRandNumbs[i];
+       myRandNumbs[i] = myRandNumbs[n - i - 1];
+       myRandNumbs[n - i - 1] = tmp;
+    }
+
+    Console.WriteLine();
+    Console.WriteLine("********************************************");
+    Console.WriteLine("Pole po reverzi:");
+    for(int i=0;i< n;i++) {
+        Console.Write("{0}; ",myRandNumbs[i]);
+    }
+
+
     Console.WriteLine();
     Console.WriteLine("Pro opakování programu stiskněte klávesu a");
     again = Console.ReadLine();

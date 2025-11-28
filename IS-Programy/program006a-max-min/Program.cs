@@ -79,13 +79,36 @@ while (again == "a")
     Console.WriteLine();
     Console.WriteLine("********************************************");
     Console.WriteLine($"Maximum: {max}");
-    Console.WriteLine($"Pozice maxima: {posMax}");
+    Console.WriteLine($"První pozice maxima: {posMax}");
     Console.WriteLine($"Minimum: {min}");
-    Console.WriteLine($"Pozice minima: {posMin}");
+    Console.WriteLine($"První pozice minima: {posMin}");
     Console.WriteLine("********************************************");
     Console.WriteLine();
 
+// Hledání všech výskytů maxima a minima
+List<int> maxPositions = new List<int>();
+List<int> minPositions = new List<int>();
 
+for (int i = 0; i < n; i++)
+{
+    if (myRandNumbs[i] == max)
+        maxPositions.Add(i);
+
+    if (myRandNumbs[i] == min)
+        minPositions.Add(i);
+}
+
+Console.WriteLine("Výskyty maxima:");
+Console.WriteLine($"Počet výskytů: {maxPositions.Count}");
+Console.WriteLine("Pozice: " + string.Join(", ", maxPositions));
+
+Console.WriteLine();
+
+Console.WriteLine("Výskyty minima:");
+Console.WriteLine($"Počet výskytů: {minPositions.Count}");
+Console.WriteLine("Pozice: " + string.Join(", ", minPositions));
+
+Console.WriteLine();
 
 
     //Vykreslení přesípacích hodin
@@ -137,8 +160,13 @@ while (again == "a")
             //vykreslení správného počtu hvězdiček pro každý řádek
             // st = stars
             for (int st = 0; st < stars; st++)
-                Console.Write(" ");
+                Console.Write("*");
+
+                Console.WriteLine();
+
+
         }
+        Console.ResetColor();
     }
     else
     {

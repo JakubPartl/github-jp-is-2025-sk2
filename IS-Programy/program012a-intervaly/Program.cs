@@ -20,15 +20,15 @@ while (again == "a")
     }
 
     Console.Write("Zadejte dolní mez (celé čísla): ");
-    int lowerBound; //Dolní mez
-    while (!int.TryParse(Console.ReadLine(), out lowerBound))
+    int dm; 
+    while (!int.TryParse(Console.ReadLine(), out dm))
     {
         Console.Write("Nezadali jste celé číslo. Zadejte dolní mez znovu: ");
     }
 
     Console.Write("Zadejte horní mez (celé čísla): ");
-    int upperBound; //Horní mez
-    while (!int.TryParse(Console.ReadLine(), out upperBound))
+    int hm; 
+    while (!int.TryParse(Console.ReadLine(), out hm))
     {
         Console.Write("Nezadali jste celé číslo. Zadejte horní mez znovu: ");
     }
@@ -36,23 +36,42 @@ while (again == "a")
     Console.WriteLine();
     Console.WriteLine("********************************************");
     Console.WriteLine("Zadané hodnoty: ");
-    Console.WriteLine("Počet čísel: {0}, Dolní mez: {1}, Horní mez: {2}", n, lowerBound, upperBound);
+    Console.WriteLine("Počet čísel: {0}, Dolní mez: {1}, Horní mez: {2}", n, dm, hm);
     Console.WriteLine("********************************************");
     Console.WriteLine();
 
-    //deklarace pole (array)
-    int[] myRandNumbs = new int[n];
+        //deklarace pole    
+        int[] myArray = new int[n];
 
-    // příprava pro využití třídy Random
-    Random myRandNum = new Random();
+        Random randomNumber = new Random();
 
-    Console.WriteLine();
-    Console.WriteLine("Náhodná čísla: ");
-    for (int i = 0; i < n; i++)
-    {
-        myRandNumbs[i] = myRandNum.Next(lowerBound, upperBound);
-        Console.Write("{0}; ", myRandNumbs[i]);
-    }
+    int int1=0;
+    int int2=0;
+    int int3=0;
+    int int4=0;
+
+    Console.WriteLine("\n\nNáhodná čísla:");
+            for(int i=0; i<n; i++) {
+                myArray[i] = randomNumber.Next(dm, hm+1);
+                Console.Write("{0}; ", myArray[i]);
+
+                if(myArray[i]<= (0.25 * hm)) {
+                    int1++;
+                }
+                else if(myArray[i] <= (0.5 * hm)) {
+                    int2++;
+                }
+                else if(myArray[i] <= (0.75 * hm)) {
+                    int3++;
+                }
+                else
+                    int4++; 
+           }
+
+            Console.WriteLine("\nInterval <{0}, {1}>: {2}", dm, 0.25 * hm, int1);
+            Console.WriteLine("Interval <{0}, {1}>: {2}", 0.25 * hm + 1, 0.5 * hm, int2);
+            Console.WriteLine("Interval <{0}, {1}>: {2}", 0.5 * hm + 1, 0.75 * hm, int3);
+            Console.WriteLine("Interval <{0}, {1}>: {2}", 0.75 * hm  + 1, hm, int4);
 
     Console.WriteLine();
     Console.WriteLine("Pro opakování programu stiskněte klávesu a");
